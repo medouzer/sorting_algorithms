@@ -6,31 +6,31 @@
  * Return: void
  */
 
-void insertion_sort_list(listint_t **list)
+void	insertion_sort_list(listint_t **list)
 {
-  listint_t *i, *tmp, *cur;
+	listint_t	*i,	*tmp,	*cur;
 
-  if (!list || !*list || !(*list)->next)
-    return ;
-  cur = (*list)->next;
-  while (cur)
-  {
-    i = cur;
-    while (i->prev && i->n < i->prev->n)
-    {
-      tmp = i->prev;
-      if (tmp->prev)
-        tmp->prev->next = i;
-      i->prev = tmp->prev;
-      tmp->prev = i;
-      tmp->next = i->next;
-      if (i->next)
-        i->next->prev = tmp;
-      i->next = tmp;
-      if (!i->prev)
-        *list = i;
-      print_list(*list);
-    }
-    cur = cur->next;
-  }
+	if (!list || !*list || !(*list)->next)
+		return;
+	cur = (*list)->next;
+	while (cur)
+	{
+		i = cur;
+		while (i->prev && i->n < i->prev->n)
+		{
+			tmp = i->prev;
+			if (tmp->prev)
+				tmp->prev->next = i;
+			i->prev = tmp->prev;
+			tmp->prev = i;
+			tmp->next = i->next;
+			if (i->next)
+				i->next->prev = tmp;
+			i->next = tmp;
+			if (!i->prev)
+				*list = i;
+			print_list(*list);
+		}
+		cur = cur->next;
+	}
 }
