@@ -11,9 +11,9 @@
 
 int partition(int *array, int start, int end, size_t size)
 {
-	int	i = start - 1;
-	int	pivot = array[end];
-	int	j,	tmp;
+	int i = start - 1;
+	int pivot = array[end];
+	int j, tmp;
 
 	for (j = start; j < end; j++)
 	{
@@ -50,7 +50,7 @@ int partition(int *array, int start, int end, size_t size)
 
 void	quick_sort_r(int *array, int start, int end, size_t size)
 {
-	int	pivot;
+	int pivot;
 
 	if (start < end)
 	{
